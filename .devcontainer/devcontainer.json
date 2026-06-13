@@ -1,0 +1,29 @@
+{
+  "name": "Cal Clone",
+  "dockerComposeFile": "docker-compose.dev.yml",
+  "service": "scheduling",
+  "workspaceFolder": "/app",
+  "forwardPorts": [4000, 4001, 5432],
+  "portsAttributes": {
+    "4000": {
+      "label": "Phoenix",
+      "onAutoForward": "notify"
+    },
+    "4001": {
+      "label": "Phoenix (HTTPS)"
+    },
+    "5432": {
+      "label": "PostgreSQL",
+      "onAutoForward": "silent"
+    }
+  },
+  "postCreateCommand": "mix deps.get && (cd api/typespec && npm install) || true",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "jakebecker.elixir-ls",
+        "ms-vscode.vscode-typescript-next"
+      ]
+    }
+  }
+}

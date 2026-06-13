@@ -1,0 +1,11 @@
+FROM elixir:1.20
+
+RUN mix local.hex --force && mix local.rebar --force
+
+RUN apt-get update && apt-get install -y make bash-completion && rm -rf /var/lib/apt/lists/*
+
+# Install Node.js 20 via nodesource
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+  && apt-get install -y nodejs
+
+WORKDIR /app
