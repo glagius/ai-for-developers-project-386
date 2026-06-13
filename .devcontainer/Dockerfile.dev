@@ -8,4 +8,8 @@ RUN apt-get update && apt-get install -y make bash-completion && rm -rf /var/lib
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
   && apt-get install -y nodejs
 
+# Install TypeSpec compiler and dependencies
+COPY api/typespec/package.json /app/api/typespec/package.json
+RUN cd /app/api/typespec && npm install
+
 WORKDIR /app

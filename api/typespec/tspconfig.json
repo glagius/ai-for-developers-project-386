@@ -1,0 +1,5 @@
+{
+  "options": {
+    "@typespec/openapi3": {}
+  }
+}

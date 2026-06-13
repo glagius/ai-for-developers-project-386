@@ -43,4 +43,7 @@ start.prod:
 	docker compose up -d --build
 
 typespec:
-	cd api/typespec && npx tsp compile
+	mkdir -p priv/api
+	cd api/typespec && npx tsp compile . --emit @typespec/openapi3
+	cp -f api/typespec/tsp-output/@typespec/openapi3/openapi.yaml priv/api/openapi.yaml
+	

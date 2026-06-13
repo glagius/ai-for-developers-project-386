@@ -1,0 +1,14 @@
+{
+  "name": "scheduling-api",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "@typespec/compiler": "^0.65.0",
+    "@typespec/http": "^0.65.0",
+    "@typespec/openapi": "^0.65.0",
+    "@typespec/versioning": "^0.65.0"
+  },
+  "dependencies": {
+    "@typespec/openapi3": "^0.65.0"
+  }
+}

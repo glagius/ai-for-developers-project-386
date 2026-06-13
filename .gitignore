@@ -38,3 +38,7 @@ npm-debug.log
 # Environment variables
 .env
 
+**/*/node_modules
+
+# TypeSpec compilation output
+/api/typespec/tsp-output/
